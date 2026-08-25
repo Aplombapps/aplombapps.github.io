@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="64" height="64" role="img" aria-label="Aplomb — favicon">
+<title>Aplomb — favicon</title>
+  <style>.fil{fill:#0F1F3D}@media (prefers-color-scheme:dark){.fil{fill:#E6EAF2}}</style>
+  <rect class="fil" x="46" y="4" width="8" height="18" rx="4"/>
+  <polygon points="26,30 74,30 74,46 50,94 26,46" fill="#B8975A"/>
+</svg>

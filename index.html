@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aplomb — applications iOS</title>
+<meta name="description" content="Aplomb est un studio français d'applications iOS : des outils précis pour les professionnels du bâtiment, des applications soignées pour la maison. La justesse, en toute sérénité.">
+<link rel="canonical" href="https://aplombapps.com/">
+<meta name="theme-color" content="#0A1322">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aplomb — applications iOS">
+<meta property="og:description" content="Des outils d'aplomb, pour le bâtiment et pour la maison. La justesse, en toute sérénité.">
+<meta property="og:url" content="https://aplombapps.com/">
+<meta property="og:image" content="https://aplombapps.com/og-image-1200x630.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap">
+<script>
+document.documentElement.classList.add('js');
+if(new URLSearchParams(location.search).has('fige'))document.documentElement.classList.add('fige');
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Aplomb","url":"https://aplombapps.com","logo":"https://aplombapps.com/apple-touch-icon-180.png","email":"contact@aplomb-apps.fr","founder":{"@type":"Person","name":"Jérôme Lasalle"},"description":"Studio français d'applications iOS pour le bâtiment et pour la maison.","sameAs":["https://instagram.com/aplombapps","https://x.com/aplombapps","https://www.linkedin.com/company/aplombapps","https://github.com/aplombapps"]}
+</script>
+<style>
+:root{
+  --nuit:#0A1322; --nuit-2:#0D1830; --panneau:#101F3C; --panneau-2:#132a52;
+  --perle:#EDF0F7; --pale:#C3CEE0; --sourdine:#7E8CA3;
+  --laiton:#C9A227; --laiton-2:#E3C25F; --sourdine-clair:#8FA0BA;
+  --axe:rgba(237,240,247,.14); --filet:rgba(237,240,247,.09);
+  --col:min(1080px,calc(100vw - 48px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--nuit);color:var(--pale);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--perle);text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--laiton);outline-offset:3px;border-radius:4px}
+::selection{background:var(--laiton);color:var(--nuit)}
+.wrap{width:var(--col);margin:0 auto;position:relative}
+
+/* ============ L'AXE — la verticale qui porte tout le site ============ */
+.axe{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.axe::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent 0,var(--axe) 140px,var(--axe) calc(100% - 200px),transparent 100%)}
+main,footer,header{position:relative;z-index:1}
+
+/* ============ barre ============ */
+header.bar{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .35s,border-color .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
+header.bar.opaque{background:rgba(10,19,34,.82);backdrop-filter:blur(14px);border-bottom-color:var(--filet)}
+.bar-int{width:var(--col);margin:0 auto;display:flex;align-items:center;gap:28px;height:68px}
+.bar svg{height:24px;width:auto;display:block;opacity:0;transition:opacity .35s}
+header.bar.opaque svg{opacity:1}
+.bar nav{margin-left:auto;display:flex;gap:34px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.bar nav a{color:var(--pale);position:relative;padding:4px 0;white-space:nowrap}
+.bar nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--laiton);transition:right .25s ease}
+.bar nav a:hover{color:var(--perle)}
+.bar nav a:hover::after{right:0}
+@media (max-width:680px){.bar nav{gap:16px;font-size:12px}.bar nav a:nth-child(3){display:none}}
+@media (max-width:480px){.bar nav a:nth-child(1){display:none}.bar-int{gap:16px}}
+@media (prefers-reduced-motion:reduce){.bar nav a::after{transition:none}}
+
+/* ============ héro ============ */
+.hero{min-height:clamp(640px,100svh,1000px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:110px 24px 90px;position:relative;
+  background:
+    radial-gradient(1100px 700px at 50% 30%,rgba(19,42,82,.55),transparent 70%),
+    var(--nuit)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--filet) 1px,transparent 1px),linear-gradient(90deg,var(--filet) 1px,transparent 1px);
+  background-size:72px 72px;background-position:center top;
+  mask-image:radial-gradient(900px 600px at 50% 38%,#000 30%,transparent 78%);
+  -webkit-mask-image:radial-gradient(900px 600px at 50% 38%,#000 30%,transparent 78%)}
+.hero>*{position:relative}
+.hero svg.logo{width:min(600px,86vw);height:auto;display:block;cursor:pointer}
+.hero .base{margin-top:38px;font-size:clamp(18px,2.6vw,24px);font-weight:500;color:var(--pale);letter-spacing:.005em}
+.hero .base b{color:var(--perle);font-weight:600}
+.hero .statut{margin-top:48px;display:inline-flex;align-items:center;justify-content:center;gap:11px;font-size:12.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--laiton);border:1px solid rgba(201,162,39,.35);border-radius:999px;padding:10px 20px;background:rgba(201,162,39,.06);max-width:calc(100vw - 48px);text-align:center;flex-wrap:wrap}
+@media (max-width:480px){.hero .statut{font-size:10.5px;letter-spacing:.13em;padding:9px 14px;gap:8px}}
+.hero .statut::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--laiton);animation:pouls 2.4s ease-in-out infinite}
+@keyframes pouls{0%,100%{opacity:1}50%{opacity:.3}}
+.hero .cue{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:76px;width:1px;background:linear-gradient(to bottom,transparent,var(--laiton));overflow:visible}
+.hero .cue::after{content:"";position:absolute;bottom:0;left:50%;width:7px;height:7px;transform:translate(-50%,50%) rotate(45deg);background:var(--laiton)}
+@media (prefers-reduced-motion:reduce){.hero .statut::before{animation:none}}
+
+/* ============ sections & jalons ============ */
+section{padding:130px 0 120px;position:relative}
+.jalon{position:absolute;top:0;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px}
+.jalon .losange{width:9px;height:9px;transform:rotate(45deg);background:var(--laiton)}
+.jalon .no{font-size:11px;font-weight:800;letter-spacing:.3em;color:var(--sourdine);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--laiton);margin:0 0 18px}
+h2{font-size:clamp(30px,4.6vw,52px);font-weight:800;color:var(--perle);line-height:1.06;margin:0 0 26px;letter-spacing:-.022em;text-wrap:balance}
+p{max-width:60ch}
+p.grand{font-size:clamp(17px,2vw,20px);line-height:1.75}
+.deux-cols{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+#studio .deux-cols{align-items:start}
+#studio .deux-cols p:nth-child(2){font-size:15.5px;color:var(--sourdine-clair)}
+#apps p.grand{max-width:48ch}
+@media (max-width:800px){.deux-cols{grid-template-columns:1fr;gap:40px}}
+
+/* révélations — l'état par défaut est visible ; le JS anime, le mode figé fige */
+html.js:not(.fige) .rev{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+html.js:not(.fige) .rev.vu{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html.js .rev{opacity:1;transform:none;transition:none}}
+
+/* piliers */
+.piliers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+@media (max-width:800px){.piliers{grid-template-columns:1fr}}
+.pilier{background:linear-gradient(180deg,#101F3C 0%,#0D1830 100%);border:1px solid var(--filet);border-radius:16px;padding:30px 28px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.pilier:hover{border-color:rgba(201,162,39,.4);transform:translateY(-3px)}
+.pilier::before{content:"";position:absolute;top:0;left:28px;right:28px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,39,.5),transparent);opacity:0;transition:opacity .3s}
+.pilier:hover::before{opacity:1}
+.pilier svg{height:40px;width:40px;display:block;margin-bottom:20px}
+.pilier h3{margin:0 0 10px;font-size:17.5px;font-weight:800;color:var(--perle);letter-spacing:-.01em}
+.pilier p{margin:0;font-size:15px;color:var(--sourdine-clair);line-height:1.65}
+.pilier .num{position:absolute;top:24px;right:26px;font-size:12px;font-weight:800;letter-spacing:.18em;color:rgba(237,240,247,.18);font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.pilier{transition:none}}
+
+/* apps */
+.carte-app{background:linear-gradient(150deg,var(--panneau) 0%,var(--panneau-2) 115%);border:1px solid var(--filet);border-radius:22px;padding:44px;display:flex;gap:42px;align-items:center;margin-top:56px;position:relative;overflow:hidden}
+.carte-app::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 260px at 18% 0%,rgba(201,162,39,.10),transparent 70%)}
+.carte-app>*{position:relative}
+@media (max-width:680px){.carte-app{flex-direction:column;text-align:center;padding:36px 26px}}
+.carte-app .icone{width:118px;height:118px;border-radius:26px;background:var(--nuit);border:1px solid rgba(237,240,247,.14);display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(237,240,247,.09)}
+.carte-app .icone svg{width:62%;height:62%}
+.carte-app h3{margin:0 0 8px;font-size:26px;font-weight:800;color:var(--perle);letter-spacing:-.015em}
+.carte-app .etiquette{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--laiton);margin-bottom:10px}
+.carte-app .etiquette::before{content:"";width:22px;height:1px;background:var(--laiton)}
+.carte-app p{margin:0;font-size:15.5px;color:var(--sourdine-clair)}
+.carte-app a{color:var(--laiton-2);font-weight:600;border-bottom:1px solid rgba(201,162,39,.4)}
+.carte-app a:hover{color:var(--perle);border-bottom-color:var(--perle)}
+
+/* marque — dessin technique */
+.plan{background:var(--nuit-2);border:1px solid var(--filet);border-radius:16px;padding:20px;position:relative;overflow:hidden}
+.plan::before{content:"";position:absolute;inset:0;opacity:.55;background-image:linear-gradient(var(--filet) 1px,transparent 1px),linear-gradient(90deg,var(--filet) 1px,transparent 1px);background-size:36px 36px}
+.plan svg{position:relative;width:100%;height:auto;display:block}
+.plan .cartouche{position:absolute;left:20px;bottom:16px;font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sourdine)}
+.mention-inpi{margin-top:26px;font-size:13.5px;color:var(--sourdine)}
+.mention-inpi b{color:var(--pale);font-weight:600}
+
+/* contact */
+.contact-centre{text-align:center;display:flex;flex-direction:column;align-items:center}
+.contact-centre p{margin-left:auto;margin-right:auto}
+.contact-boite{margin-top:44px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--laiton);color:var(--nuit);font-weight:800;font-size:16px;letter-spacing:.01em;border-radius:12px;padding:16px 28px;transition:background .2s ease;box-shadow:inset 0 1px 0 rgba(237,240,247,.3),0 12px 32px rgba(0,0,0,.45)}
+.btn:hover{color:var(--nuit);background:var(--laiton-2)}
+.btn-fantome{background:transparent;color:var(--perle);border:1px solid rgba(237,240,247,.2);box-shadow:none}
+.btn-fantome:hover{color:var(--laiton-2);border-color:var(--laiton);box-shadow:none}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+
+/* pied */
+footer{border-top:1px solid var(--filet);padding:64px 0 80px;font-size:14px;color:var(--sourdine);background:linear-gradient(180deg,transparent,rgba(13,24,48,.6))}
+footer .haut{display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-start;justify-content:space-between}
+footer .haut svg{height:30px;width:auto}
+footer .reseaux{display:flex;gap:24px;font-weight:600;font-size:13.5px;letter-spacing:.04em}
+footer .reseaux a{color:var(--pale)}
+footer .reseaux a:hover{color:var(--laiton-2)}
+footer .legal{margin-top:44px;padding-top:26px;border-top:1px solid var(--filet);font-size:12.5px;line-height:1.85}
+footer .legal p{max-width:none;margin:.3em 0}
+footer .legal b{color:var(--pale);font-weight:600}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="mot" viewBox="-8 -90 389 128">
+  <g fill="currentColor"><path d="M12.85 0L2 0L25.40-72L40.45-72L63.85 0L53 0L47.65-16.25L18.10-16.25L12.85 0ZM21.30-26.05L44.45-26.05L32.80-61.55L21.30-26.05ZM98.20 1.50L98.20 1.50Q90.45 1.50 85.20-2.30L85.20-2.30Q84.20-3 83.30-3.80L83.30-3.80L83.30 24L72.80 24L72.80-54L82.10-54L82.10-49.15Q83.50-50.60 85.15-51.80L85.15-51.80Q90.35-55.50 98-55.50L98-55.50Q105.60-55.50 111.13-51.78Q116.65-48.05 119.65-41.63Q122.65-35.20 122.65-27.05L122.65-27.05Q122.65-18.95 119.68-12.48Q116.70-6 111.23-2.25Q105.75 1.50 98.20 1.50ZM96.75-7.95L96.75-7.95Q101.75-7.95 105.03-10.50Q108.30-13.05 109.93-17.38Q111.55-21.70 111.55-27.05L111.55-27.05Q111.55-32.35 109.93-36.65Q108.30-40.95 104.95-43.50Q101.60-46.05 96.40-46.05L96.40-46.05Q91.50-46.05 88.33-43.65Q85.15-41.25 83.63-36.95Q82.10-32.65 82.10-27.05Q82.10-21.45 83.60-17.15Q85.10-12.85 88.35-10.40Q91.60-7.95 96.75-7.95Z"/><path d="M193.55 1.50L193.55 1.50Q185.45 1.50 179.50-2.15Q173.55-5.80 170.33-12.23Q167.10-18.65 167.10-27.05L167.10-27.05Q167.10-35.50 170.40-41.93Q173.70-48.35 179.65-51.93Q185.60-55.50 193.55-55.50L193.55-55.50Q201.65-55.50 207.60-51.85Q213.55-48.20 216.80-41.80Q220.05-35.40 220.05-27.05L220.05-27.05Q220.05-18.60 216.78-12.18Q213.50-5.75 207.55-2.13Q201.60 1.50 193.55 1.50ZM193.55-8.35L193.55-8.35Q201.30-8.35 205.13-13.58Q208.95-18.80 208.95-27.05L208.95-27.05Q208.95-35.50 205.08-40.58Q201.20-45.65 193.55-45.65L193.55-45.65Q188.30-45.65 184.90-43.28Q181.50-40.90 179.85-36.73Q178.20-32.55 178.20-27.05L178.20-27.05Q178.20-18.55 182.10-13.45Q186.00-8.35 193.55-8.35ZM306.20 0L295.75 0L295.80-33.65Q295.80-39.50 292.80-42.78Q289.80-46.05 284.90-46.05L284.90-46.05Q281.90-46.05 279.43-44.68Q276.95-43.30 275.43-40.58Q273.90-37.85 273.90-33.75L273.90-33.75L273.90-33.75L273.85 0L263.40 0L263.45-33.45Q263.45-39.35 260.48-42.70Q257.50-46.05 252.50-46.05L252.50-46.05Q247.55-46.05 244.53-42.65Q241.50-39.25 241.50-33.75L241.50-33.75L241.50 0L231 0L231-54L240.30-54L240.30-48.20Q242.60-51.10 245.95-52.95L245.95-52.95Q250.30-55.35 255.80-55.35L255.80-55.35Q261.55-55.35 265.60-52.95L265.60-52.95Q269.40-50.65 271.50-46.70L271.50-46.70Q274-50.70 278.15-53L278.15-53Q282.50-55.35 287.90-55.35L287.90-55.35Q296.65-55.35 301.45-50.10Q306.25-44.85 306.25-36.15L306.25-36.15L306.20 0ZM344.60 1.50L344.60 1.50Q336.85 1.50 331.60-2.30L331.60-2.30Q329.90-3.50 328.50-4.95L328.50-4.95L328.50 0L319.20 0L319.20-72L329.70-72L329.70-50.30Q330.55-51.10 331.55-51.80L331.55-51.80Q336.75-55.50 344.40-55.50L344.40-55.50Q352-55.50 357.52-51.78Q363.05-48.05 366.05-41.63Q369.05-35.20 369.05-27.05L369.05-27.05Q369.05-18.95 366.07-12.48Q363.10-6 357.63-2.25Q352.15 1.50 344.60 1.50ZM343.15-7.95L343.15-7.95Q348.15-7.95 351.43-10.50Q354.70-13.05 356.32-17.38Q357.95-21.70 357.95-27.05L357.95-27.05Q357.95-32.35 356.32-36.65Q354.70-40.95 351.35-43.50Q348-46.05 342.80-46.05L342.80-46.05Q337.90-46.05 334.73-43.65Q331.55-41.25 330.02-36.95Q328.50-32.65 328.50-27.05Q328.50-21.45 330-17.15Q331.50-12.85 334.75-10.40Q338-7.95 343.15-7.95Z"/></g>
+  <g transform="translate(144.875 -70)"><circle r="5.2" fill="currentColor"/><rect x="-2.6" y="3.6" width="5.2" height="55.4" rx="2.6" fill="currentColor"/><polygon points="-13,63.6 13,63.6 13,72.8 0,93 -13,72.8" fill="#C9A227"/></g>
+</symbol>
+<symbol id="plomb-seul" viewBox="0 0 100 100">
+  <circle cx="50" cy="13.6" r="4.6" fill="currentColor"/><rect x="47.7" y="18.2" width="4.6" height="40.8" rx="2.3" fill="currentColor"/><polygon points="37.6,63.6 62.4,63.6 62.4,71.9 50,91.2 37.6,71.9" fill="#C9A227"/>
+</symbol>
+</defs></svg>
+
+<header class="bar" id="barre">
+  <div class="bar-int">
+    <a href="#haut" aria-label="Aplomb — retour en haut"><svg style="color:#EDF0F7"><use href="#mot"/></svg></a>
+    <nav aria-label="Navigation principale">
+      <a href="#studio">Le studio</a>
+      <a href="#apps">Applications</a>
+      <a href="#marque">La marque</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="axe" aria-hidden="true"></div>
+<!-- ================= HÉRO ================= -->
+<div class="hero" id="haut">
+  <svg class="logo" id="logoAnime" viewBox="-10 -94 393 136" role="img" aria-label="Aplomb — cliquer pour rejouer l'animation">
+    <g id="ap" opacity="1" fill="#EDF0F7"><path d="M12.85 0L2 0L25.40-72L40.45-72L63.85 0L53 0L47.65-16.25L18.10-16.25L12.85 0ZM21.30-26.05L44.45-26.05L32.80-61.55L21.30-26.05ZM98.20 1.50L98.20 1.50Q90.45 1.50 85.20-2.30L85.20-2.30Q84.20-3 83.30-3.80L83.30-3.80L83.30 24L72.80 24L72.80-54L82.10-54L82.10-49.15Q83.50-50.60 85.15-51.80L85.15-51.80Q90.35-55.50 98-55.50L98-55.50Q105.60-55.50 111.13-51.78Q116.65-48.05 119.65-41.63Q122.65-35.20 122.65-27.05L122.65-27.05Q122.65-18.95 119.68-12.48Q116.70-6 111.23-2.25Q105.75 1.50 98.20 1.50ZM96.75-7.95L96.75-7.95Q101.75-7.95 105.03-10.50Q108.30-13.05 109.93-17.38Q111.55-21.70 111.55-27.05L111.55-27.05Q111.55-32.35 109.93-36.65Q108.30-40.95 104.95-43.50Q101.60-46.05 96.40-46.05L96.40-46.05Q91.50-46.05 88.33-43.65Q85.15-41.25 83.63-36.95Q82.10-32.65 82.10-27.05Q82.10-21.45 83.60-17.15Q85.10-12.85 88.35-10.40Q91.60-7.95 96.75-7.95Z"/></g>
+    <g id="omb" opacity="1" fill="#EDF0F7"><path d="M193.55 1.50L193.55 1.50Q185.45 1.50 179.50-2.15Q173.55-5.80 170.33-12.23Q167.10-18.65 167.10-27.05L167.10-27.05Q167.10-35.50 170.40-41.93Q173.70-48.35 179.65-51.93Q185.60-55.50 193.55-55.50L193.55-55.50Q201.65-55.50 207.60-51.85Q213.55-48.20 216.80-41.80Q220.05-35.40 220.05-27.05L220.05-27.05Q220.05-18.60 216.78-12.18Q213.50-5.75 207.55-2.13Q201.60 1.50 193.55 1.50ZM193.55-8.35L193.55-8.35Q201.30-8.35 205.13-13.58Q208.95-18.80 208.95-27.05L208.95-27.05Q208.95-35.50 205.08-40.58Q201.20-45.65 193.55-45.65L193.55-45.65Q188.30-45.65 184.90-43.28Q181.50-40.90 179.85-36.73Q178.20-32.55 178.20-27.05L178.20-27.05Q178.20-18.55 182.10-13.45Q186.00-8.35 193.55-8.35ZM306.20 0L295.75 0L295.80-33.65Q295.80-39.50 292.80-42.78Q289.80-46.05 284.90-46.05L284.90-46.05Q281.90-46.05 279.43-44.68Q276.95-43.30 275.43-40.58Q273.90-37.85 273.90-33.75L273.90-33.75L273.90-33.75L273.85 0L263.40 0L263.45-33.45Q263.45-39.35 260.48-42.70Q257.50-46.05 252.50-46.05L252.50-46.05Q247.55-46.05 244.53-42.65Q241.50-39.25 241.50-33.75L241.50-33.75L241.50 0L231 0L231-54L240.30-54L240.30-48.20Q242.60-51.10 245.95-52.95L245.95-52.95Q250.30-55.35 255.80-55.35L255.80-55.35Q261.55-55.35 265.60-52.95L265.60-52.95Q269.40-50.65 271.50-46.70L271.50-46.70Q274-50.70 278.15-53L278.15-53Q282.50-55.35 287.90-55.35L287.90-55.35Q296.65-55.35 301.45-50.10Q306.25-44.85 306.25-36.15L306.25-36.15L306.20 0ZM344.60 1.50L344.60 1.50Q336.85 1.50 331.60-2.30L331.60-2.30Q329.90-3.50 328.50-4.95L328.50-4.95L328.50 0L319.20 0L319.20-72L329.70-72L329.70-50.30Q330.55-51.10 331.55-51.80L331.55-51.80Q336.75-55.50 344.40-55.50L344.40-55.50Q352-55.50 357.52-51.78Q363.05-48.05 366.05-41.63Q369.05-35.20 369.05-27.05L369.05-27.05Q369.05-18.95 366.07-12.48Q363.10-6 357.63-2.25Q352.15 1.50 344.60 1.50ZM343.15-7.95L343.15-7.95Q348.15-7.95 351.43-10.50Q354.70-13.05 356.32-17.38Q357.95-21.70 357.95-27.05L357.95-27.05Q357.95-32.35 356.32-36.65Q354.70-40.95 351.35-43.50Q348-46.05 342.80-46.05L342.80-46.05Q337.90-46.05 334.73-43.65Q331.55-41.25 330.02-36.95Q328.50-32.65 328.50-27.05Q328.50-21.45 330-17.15Q331.50-12.85 334.75-10.40Q338-7.95 343.15-7.95Z"/></g>
+    <g transform="translate(144.875 -70)"><g id="plomb">
+      <circle id="anneau" r="5.2" fill="#EDF0F7" opacity="1"/>
+      <rect id="fil" x="-2.6" y="3.6" width="5.2" height="55.4" rx="2.6" fill="#EDF0F7"/>
+      <polygon id="cone" opacity="1" transform="translate(0 64.2)" points="-13,0 13,0 13,9.2 0,29.4 -13,9.2" fill="#C9A227"/>
+    </g></g>
+  </svg>
+  <p class="base">Des outils <b>d'aplomb</b>, pour le bâtiment et pour la maison.</p>
+  <div class="statut">Première application en préparation</div>
+  <div class="cue" aria-hidden="true"></div>
+</div>
+
+<!-- ================= 01 STUDIO ================= -->
+<section id="studio">
+  <div class="jalon" aria-hidden="true"><span class="losange"></span><span class="no">01</span></div>
+  <div class="wrap">
+    <div class="rev">
+      <p class="eyebrow">Le studio</p>
+      <h2>La précision de l'ingénieur,<br>la chaleur de l'artisan.</h2>
+    </div>
+    <div class="deux-cols rev">
+      <p class="grand">Aplomb est un studio indépendant fondé par un directeur de travaux techniques — vingt ans de chantiers, de fluides et d'énergie. Nous fabriquons des applications iOS comme on tient un chantier&nbsp;: avec méthode, sans approximation, et le souci du geste bien fait.</p>
+      <p>Des outils métier d'exception pour les professionnels du bâtiment&nbsp;; des applications soignées pour la vie de tous les jours. L'anti-modèle&nbsp;: l'usine à fonctionnalités. Le modèle&nbsp;: l'atelier — un lieu où des choses justes sont fabriquées avec soin, une par une.</p>
+    </div>
+    <div class="piliers">
+      <div class="pilier rev">
+        <span class="num">/1</span>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M32 22 V68 H80" fill="none" stroke="#EDF0F7" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="40" y="48" width="11" height="11" fill="#C9A227"/></svg>
+        <h3>Juste</h3>
+        <p>Chaque calcul vérifié, chaque hypothèse visible. Un outil doit dire vrai — le reste est décoration.</p>
+      </div>
+      <div class="pilier rev" style="transition-delay:.12s">
+        <span class="num">/2</span>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 14 V50" stroke="#EDF0F7" stroke-width="5" stroke-linecap="round" fill="none"/><polygon points="50,84 40,56 60,56" fill="#C9A227"/></svg>
+        <h3>Sobre</h3>
+        <p>Lisible d'une main, sur un échafaudage comme dans un canapé. Grands contrôles, mode sombre, zéro bavardage.</p>
+      </div>
+      <div class="pilier rev" style="transition-delay:.24s">
+        <span class="num">/3</span>
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="28" y="26" width="44" height="48" rx="10" fill="none" stroke="#EDF0F7" stroke-width="5"/><circle cx="50" cy="50" r="9" fill="#C9A227"/></svg>
+        <h3>À vous</h3>
+        <p>Vos données restent sur votre iPhone. Pas de compte obligatoire, pas de publicité — rien ne part sans vous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 APPS ================= -->
+<section id="apps">
+  <div class="jalon" aria-hidden="true"><span class="losange"></span><span class="no">02</span></div>
+  <div class="wrap">
+    <div class="rev">
+      <p class="eyebrow">Applications</p>
+      <h2>En atelier.</h2>
+      <p class="grand">La première application Aplomb est sur l'établi. Elle sortira quand elle sera d'aplomb — pas avant.</p>
+    </div>
+    <div class="carte-app rev">
+      <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#plomb-seul"/></svg></div>
+      <div>
+        <span class="etiquette">En préparation</span>
+        <h3>Première application</h3>
+        <p>Un outil du quotidien, pensé sur le terrain et fini au pixel. <a href="mailto:contact@aplomb-apps.fr?subject=Pr%C3%A9venez-moi%20de%20la%20sortie">Écrivez-nous</a> pour être prévenu de la sortie&nbsp;: un e-mail à l'ouverture, rien d'autre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 MARQUE ================= -->
+<section id="marque">
+  <div class="jalon" aria-hidden="true"><span class="losange"></span><span class="no">03</span></div>
+  <div class="wrap deux-cols">
+    <div class="rev">
+      <p class="eyebrow">La marque</p>
+      <h2>La verticale vraie, depuis 3&nbsp;000 ans.</h2>
+      <p class="grand">Pas de pile, pas de mise à jour, pas de réglage&nbsp;: un fil, un cône de laiton, et la gravité fait le reste. Le fil à plomb est l'outil le plus honnête du chantier — il ne sait pas mentir.</p>
+      <p>Nous l'avons pris pour emblème parce que c'est exactement ce que nous demandons à un logiciel&nbsp;: chercher la verticale, la trouver, ne plus bouger. Dans notre logotype, le plomb remplace le «&nbsp;l&nbsp;» et reste suspendu — jamais posé. La tension, c'est la justesse.</p>
+      <p class="mention-inpi"><b>APLOMB</b> est une marque française déposée — INPI n°&nbsp;5290792, classes 9 et 42.</p>
+    </div>
+    <div class="plan rev" aria-hidden="true">
+      <svg viewBox="0 0 340 400">
+        <!-- verticale de référence -->
+        <line x1="170" y1="18" x2="170" y2="382" stroke="#7E8CA3" stroke-width="1" stroke-dasharray="2 6" opacity=".7"/>
+        <!-- fil + plomb -->
+        <circle cx="170" cy="46" r="7" fill="#EDF0F7"/>
+        <line x1="170" y1="53" x2="170" y2="216" stroke="#EDF0F7" stroke-width="3.4" stroke-linecap="round"/>
+        <polygon points="145,226 195,226 195,244 170,286 145,244" fill="#C9A227"/>
+        <!-- sol -->
+        <line x1="60" y1="330" x2="280" y2="330" stroke="#7E8CA3" stroke-width="1.4"/>
+        <g stroke="#7E8CA3" stroke-width="1" opacity=".8">
+          <line x1="70" y1="330" x2="60" y2="342"/><line x1="100" y1="330" x2="90" y2="342"/><line x1="130" y1="330" x2="120" y2="342"/><line x1="160" y1="330" x2="150" y2="342"/><line x1="190" y1="330" x2="180" y2="342"/><line x1="220" y1="330" x2="210" y2="342"/><line x1="250" y1="330" x2="240" y2="342"/><line x1="280" y1="330" x2="270" y2="342"/>
+        </g>
+        <!-- angle 90° -->
+        <path d="M170 330 L170 302 A28 28 0 0 1 198 330 Z" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+        <rect x="170" y="318" width="12" height="12" fill="none" stroke="#C9A227" stroke-width="1.2"/>
+        <text x="208" y="314" font-family="Manrope,sans-serif" font-size="12" font-weight="600" fill="#C9A227" letter-spacing="1">90,00°</text>
+        <!-- cotes -->
+        <g stroke="#7E8CA3" stroke-width="1">
+          <line x1="118" y1="46" x2="118" y2="286"/>
+          <line x1="112" y1="46" x2="124" y2="46"/><line x1="112" y1="286" x2="124" y2="286"/>
+        </g>
+        <text x="104" y="172" font-family="Manrope,sans-serif" font-size="10.5" font-weight="600" fill="#7E8CA3" letter-spacing="2" transform="rotate(-90 104 172)">SUSPENSION</text>
+        <!-- vide sous la pointe -->
+        <g stroke="#C9A227" stroke-width="1"><line x1="228" y1="286" x2="228" y2="330"/><line x1="222" y1="286" x2="234" y2="286"/><line x1="222" y1="330" x2="234" y2="330"/></g>
+        <text x="240" y="312" font-family="Manrope,sans-serif" font-size="10.5" font-weight="600" fill="#C9A227" letter-spacing="1.5">JAMAIS POSÉ</text>
+        <!-- libellé haut -->
+        <text x="186" y="42" font-family="Manrope,sans-serif" font-size="10.5" font-weight="600" fill="#7E8CA3" letter-spacing="2">POINT D'ATTACHE</text>
+        <text x="150" y="24" font-family="Manrope,sans-serif" font-size="10.5" font-weight="600" fill="#7E8CA3" letter-spacing="2" text-anchor="end">VERTICALE VRAIE</text>
+      </svg>
+      <span class="cartouche">Fig. 01 — fil à plomb · échelle libre · Aplomb, 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 CONTACT ================= -->
+<section id="contact">
+  <div class="jalon" aria-hidden="true"><span class="losange"></span><span class="no">04</span></div>
+  <div class="wrap contact-centre rev">
+    <p class="eyebrow">Contact</p>
+    <h2>Parlons peu, parlons juste.</h2>
+    <p class="grand">Une question, une idée d'outil qui manque à votre métier, ou l'envie d'être prévenu de la première sortie&nbsp;: une adresse suffit.</p>
+    <div class="contact-boite">
+      <a class="btn" href="mailto:contact@aplomb-apps.fr">contact@aplomb-apps.fr</a>
+      <a class="btn btn-fantome" href="https://instagram.com/aplombapps" rel="noopener">@aplombapps</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="haut">
+      <div>
+        <svg style="color:#EDF0F7" aria-hidden="true"><use href="#mot"/></svg>
+        <p style="margin-top:14px;font-size:13.5px">Studio d'applications iOS<br>La justesse, en toute sérénité.</p>
+      </div>
+      <nav class="reseaux" aria-label="Réseaux sociaux">
+        <a href="https://instagram.com/aplombapps" rel="noopener">Instagram</a>
+        <a href="https://x.com/aplombapps" rel="noopener">X</a>
+        <a href="https://www.linkedin.com/company/aplombapps" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/aplombapps" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <p><b>Mentions légales.</b> Éditeur et directeur de la publication&nbsp;: Jérôme Lasalle, entrepreneur individuel — contact@aplomb-apps.fr. Hébergeur&nbsp;: GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. <!-- TODO : ajouter le SIREN de la micro-entreprise --> APLOMB est une marque déposée (INPI n°&nbsp;5290792). Ce site ne dépose aucun cookie et ne collecte aucune donnée personnelle&nbsp;; les e-mails reçus servent uniquement à répondre puis, avec votre accord, à vous prévenir des sorties.</p>
+      <p>© 2026 Aplomb — aplombapps.com · aplomb-apps.fr</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  /* --- animation du héro : le plomb se stabilise --- */
+  const els={ap:$('ap'),omb:$('omb'),anneau:$('anneau'),fil:$('fil'),cone:$('cone'),plomb:$('plomb')};
+  const L=55.4, reduit=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const seg=(t,a,b)=>clamp((t-a)/(b-a),0,1);
+  const eOut=p=>1-Math.pow(1-p,3), eInOut=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+  function pose(t){
+    const anneau=eOut(seg(t,0,250));
+    const dp=seg(t,200,850), chute=dp*dp, cone=seg(dp,.15,.45);
+    let angle=7;
+    if(t>850){const s=(t-850)/1000; angle=7*Math.exp(-2.6*s)*Math.cos(2*Math.PI*s/0.6);}
+    const st=eInOut(seg(t,1700,2250));
+    return{anneau,chute,cone,angle,echelle:1.9+(1-1.9)*st,lettres:eOut(seg(t,1800,2350)),shiftL:12*(1-eOut(seg(t,1800,2350)))};
+  }
+  function applique(p){
+    els.anneau.setAttribute('opacity',p.anneau);
+    const h=L*p.chute; els.fil.setAttribute('height',h);
+    els.cone.setAttribute('opacity',p.cone); els.cone.setAttribute('transform',`translate(0 ${3.6+h+5.2})`);
+    els.plomb.setAttribute('transform',`rotate(${p.angle}) scale(${p.echelle})`);
+    els.ap.setAttribute('opacity',p.lettres); els.ap.setAttribute('transform',`translate(${p.shiftL} 0)`);
+    els.omb.setAttribute('opacity',p.lettres); els.omb.setAttribute('transform',`translate(${-p.shiftL} 0)`);
+  }
+  const FIN=2600, fige=document.documentElement.classList.contains('fige');
+  function joue(){
+    if(reduit||fige){applique({anneau:1,chute:1,cone:1,angle:0,echelle:1,lettres:1,shiftL:0});return;}
+    const t0=performance.now();
+    (function image(now){const t=Math.min(now-t0,FIN);applique(pose(t));if(t<FIN)requestAnimationFrame(image);})(t0);
+  }
+  $('logoAnime').addEventListener('click',joue);
+  joue();
+  const y=new URLSearchParams(location.search).get('y');
+  if(y){const va=()=>{const el=document.getElementById(y);const top=el?el.getBoundingClientRect().top+scrollY:+y||0;scrollTo({top,behavior:'instant'});};addEventListener('load',()=>setTimeout(va,60));}
+
+  /* --- barre : opaque après le héro --- */
+  const barre=$('barre');
+  addEventListener('scroll',()=>{barre.classList.toggle('opaque',scrollY>innerHeight*0.72)},{passive:true});
+
+  /* --- révélations au défilement --- */
+  if('IntersectionObserver' in window && !reduit){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}}),{threshold:.18,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('.rev').forEach(el=>el.classList.add('vu'));
+  }
+})();
+</script>
+</body>
+</html>
