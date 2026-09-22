@@ -158,8 +158,8 @@ html.js:not(.fige) .rev.vu{opacity:1;transform:none}
 .carte-app .etiquette{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--laiton);margin-bottom:10px}
 .carte-app .etiquette::before{content:"";width:22px;height:1px;background:var(--laiton)}
 .carte-app p{margin:0;font-size:15.5px;color:var(--sourdine-clair)}
-.carte-app a{color:var(--laiton-2);font-weight:600;border-bottom:1px solid rgba(201,162,39,.4)}
-.carte-app a:hover{color:var(--perle);border-bottom-color:var(--perle)}
+.carte-app a,.carte-mini a{color:var(--laiton-2);font-weight:600;border-bottom:1px solid rgba(201,162,39,.4)}
+.carte-app a:hover,.carte-mini a:hover{color:var(--perle);border-bottom-color:var(--perle)}
 /* catalogue — l'atelier s'ouvre à plusieurs applications */
 .grille-apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin-top:20px}
 .carte-mini{background:linear-gradient(150deg,var(--panneau) 0%,var(--panneau-2) 130%);border:1px solid var(--filet);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s}
@@ -175,6 +175,7 @@ html.js:not(.fige) .rev.vu{opacity:1;transform:none}
 .carte-mini.etabli p{max-width:60ch}
 @media (max-width:680px){.carte-mini.etabli{flex-direction:column;align-items:flex-start}}
 .carte-mini.etabli .icone{opacity:.5}
+@media (min-width:720px){.carte-mini.double{grid-column:span 2;flex-direction:row;align-items:center;gap:26px}}
 .carte-mini.etabli h4{color:var(--pale)}
 
 /* marque — dessin technique qui se trace */
@@ -230,6 +231,13 @@ footer .legal b{color:var(--pale);font-weight:600}
   <rect x="10" y="12.5" width="18" height="4" rx="2" fill="currentColor"/>
   <rect x="10" y="31.5" width="12" height="4" rx="2" fill="currentColor"/>
   <rect x="10" y="21.5" width="35" height="5" rx="2.5" fill="#C9A227"/>
+</symbol>
+<!-- JALONYS — le jalon planté : le triangle d'arpenteur, l'aiguille qui marque la date.
+     Même règle que CLAUSIS : contours à la couleur du texte, l'accent en laiton. -->
+<symbol id="jalon-plante" viewBox="0 0 48 48">
+  <path d="M24 5 L41.5 39.5 H6.5 Z" fill="none" stroke="#C9A227" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 34.5 V15" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+  <circle cx="24" cy="34.5" r="3" fill="currentColor"/>
 </symbol>
 </defs></svg>
 
@@ -342,6 +350,15 @@ footer .legal b{color:var(--pale);font-weight:600}
     <!-- Le reste du catalogue. Une carte par application ; la dernière reste
          ouverte tant qu'il y a des choses sur l'établi. -->
     <div class="grille-apps rev">
+      <!-- JALONYS — encore sur l'établi ; son site est déjà ouvert. -->
+      <div class="carte-mini double">
+        <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#jalon-plante"/></svg></div>
+        <div>
+          <span class="etiquette">En construction</span>
+          <h4>JALONYS</h4>
+          <p>Le planning de chantier, tenu&nbsp;: indices comparés, pointage d'avancement daté, courbe en S, rétroplanning des approvisionnements. L'application est encore sur l'établi — son site est déjà ouvert&nbsp;: <a href="https://jalonys.app">jalonys.app</a>.</p>
+        </div>
+      </div>
       <div class="carte-mini etabli">
         <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#plomb-seul"/></svg></div>
         <div>
