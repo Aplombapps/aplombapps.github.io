@@ -1,0 +1,16 @@
+/* Pages légales d'aplombapps.com : même charte que l'accueil (nuit, perle, laiton, Manrope). */
+:root{--nuit:#0A1322;--perle:#EDF0F7;--pale:#C3CEE0;--sourdine:#7E8CA3;--laiton:#C9A227;--laiton-2:#E3C25F;--filet:rgba(237,240,247,.09)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--nuit);color:var(--pale);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--laiton-2);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--laiton);outline-offset:3px;border-radius:4px}
+::selection{background:var(--laiton);color:var(--nuit)}
+.page{width:min(760px,calc(100vw - 32px));margin:0 auto;padding:56px 0 96px}
+.retour{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pale);text-decoration:none;margin-bottom:40px}
+.retour:hover{color:var(--laiton-2)}
+h1{color:var(--perle);font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.02em;margin:0 0 8px;font-weight:800}
+.maj{color:var(--sourdine);font-size:13.5px;margin:0 0 36px}
+h2{color:var(--perle);font-size:18px;margin:40px 0 10px;padding-top:24px;border-top:1px solid var(--filet);font-weight:700}
+b{color:var(--perle);font-weight:600}
+ul{padding-left:1.2em}
+li{margin:.3em 0}
