@@ -158,6 +158,8 @@ html.js:not(.fige) .rev.vu{opacity:1;transform:none}
 .carte-app .etiquette{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--laiton);margin-bottom:10px}
 .carte-app .etiquette::before{content:"";width:22px;height:1px;background:var(--laiton)}
 .carte-app p{margin:0;font-size:15.5px;color:var(--sourdine-clair)}
+.carte-app .btn-magasin{margin-top:22px;padding:12px 22px;font-size:14.5px;border-bottom:none;color:var(--nuit)}
+.carte-app .btn-magasin:hover{color:var(--nuit);border-bottom:none}
 .carte-app a,.carte-mini a{color:var(--laiton-2);font-weight:600;border-bottom:1px solid rgba(201,162,39,.4)}
 .carte-app a:hover,.carte-mini a:hover{color:var(--perle);border-bottom-color:var(--perle)}
 /* catalogue — l'atelier s'ouvre à plusieurs applications */
@@ -239,6 +241,16 @@ footer .legal b{color:var(--pale);font-weight:600}
   <path d="M24 34.5 V15" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
   <circle cx="24" cy="34.5" r="3" fill="currentColor"/>
 </symbol>
+<!-- DECKORA — la carte levée : une carte debout devant l'éventail Art déco de son icône.
+     Même règle : contours à la couleur du texte, l'éventail en laiton. -->
+<symbol id="carte-levee" viewBox="0 0 48 48">
+  <g stroke="#C9A227" stroke-linecap="round" fill="none">
+    <path d="M24 45 L2.75 39.31 M24 45 L5.98 32.38 M24 45 L11.38 26.98 M24 45 L36.62 26.98 M24 45 L42.02 32.38 M24 45 L45.25 39.31" stroke-width="1.6"/>
+    <path d="M10.21 42.57 A14 14 0 0 1 37.79 42.57 M4.3 41.53 A20 20 0 0 1 43.7 41.53" stroke-width="1.6"/>
+  </g>
+  <rect x="15" y="3.5" width="18" height="27" rx="3.2" fill="#0A1322" stroke="currentColor" stroke-width="2.4"/>
+  <path d="M24 10 Q26.2 14.2 29.2 17 Q26.2 19.8 24 24 Q21.8 19.8 18.8 17 Q21.8 14.2 24 10 Z" fill="currentColor"/>
+</symbol>
 </defs></svg>
 
 <header class="bar" id="barre">
@@ -281,7 +293,7 @@ footer .legal b{color:var(--pale);font-weight:600}
       <h1>La justesse,<br>en toute <em>sérénité</em>.</h1>
       <p class="base">Des outils <b>d'aplomb</b> pour les professionnels du bâtiment, des applications soignées pour la maison. Fabriquées une par une, comme on tient un chantier.</p>
       <div class="actions">
-        <a class="btn" href="#apps">Découvrir CLAUSIS</a>
+        <a class="btn" href="#apps">Découvrir les applications</a>
         <a class="btn btn-fantome" href="#studio">Le studio</a>
       </div>
       <p class="marque-ligne">Marque française déposée · INPI n° 5290792</p>
@@ -336,14 +348,27 @@ footer .legal b{color:var(--pale);font-weight:600}
       <p class="grand">Les applications Aplomb sortent une par une, quand elles sont d'aplomb — pas avant. Chacune porte son propre nom et sa propre identité&nbsp;; toutes portent la même exigence.</p>
     </div>
 
-    <!-- CLAUSIS — première application publiée. Pictogramme redessiné dans le langage du site :
+    <!-- DECKORA — premier jeu publié, sur l'App Store depuis le 06/10/2026 (1.9.2 : quinze jeux
+         sur iPhone et iPad, sans blackjack ni hold'em). Pictogramme dans le langage du site :
+         la carte en contour, l'éventail Art déco de son icône en laiton. -->
+    <div class="carte-app rev">
+      <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#carte-levee"/></svg></div>
+      <div>
+        <span class="etiquette">Jeux de cartes · iPhone et iPad</span>
+        <h3>DECKORA</h3>
+        <p>Belote, tarot, solitaire, rami, président… quinze jeux de cartes réunis dans un décor Art déco. Des adversaires à votre mesure, qui ne trichent jamais&nbsp;; les règles de chaque jeu en une pression&nbsp;; des tables entre amis, en ligne ou en se passant l'appareil. Le solitaire et la belote sont offerts, <b>un achat unique débloque tous les autres jeux</b> — sans abonnement ni publicité.</p>
+        <a class="btn btn-magasin" href="https://apps.apple.com/fr/app/deckora/id6817152237" rel="noopener">Disponible sur l'App Store</a>
+      </div>
+    </div>
+
+    <!-- CLAUSIS — premier logiciel publié. Pictogramme redessiné dans le langage du site :
          contours à la couleur du texte, la clause relevée en laiton. -->
     <div class="carte-app rev">
       <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#clause-relevee"/></svg></div>
       <div>
         <span class="etiquette">Logiciel professionnel · Windows</span>
         <h3>CLAUSIS</h3>
-        <p>Lire un dossier de consultation de travaux en une heure, pas en trois jours. CLAUSIS rend ce qui compte&nbsp;: les clauses qui coûtent, les pièces qui manquent, les interfaces entre lots, l'amiante et le plomb — et <b>chaque constat cite sa source</b>. Vos dossiers restent sur votre poste. Essai de trente jours sur <a href="https://clausis.app">clausis.app</a>.</p>
+        <p>Lire un dossier de consultation de travaux en une heure, pas en trois jours. CLAUSIS rend ce qui compte&nbsp;: les clauses qui coûtent, les pièces qui manquent, les interfaces entre lots, l'amiante et le plomb — et <b>chaque constat cite sa source</b>. Vos dossiers restent sur votre poste. Au chantier, une application iPhone et iPad gratuite suit l'affaire&nbsp;; sa publication sur l'App Store est en cours. Essai de trente jours et formules sur <a href="https://clausis.app">clausis.app</a>.</p>
       </div>
     </div>
 
@@ -364,7 +389,7 @@ footer .legal b{color:var(--pale);font-weight:600}
         <div>
           <span class="etiquette">Sur l'établi</span>
           <h4>D'autres suivent</h4>
-          <p>Des outils métier pour les professionnels du bâtiment, des applications soignées pour la vie de tous les jours. Elles seront annoncées ici, une par une, le jour où elles tiennent debout.</p>
+          <p>Des outils métier pour les professionnels du bâtiment, des applications et des jeux soignés pour la vie de tous les jours. Ils seront annoncés ici, un par un, le jour où ils tiennent debout.</p>
         </div>
       </div>
     </div>
