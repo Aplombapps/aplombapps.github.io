@@ -177,7 +177,7 @@ html.js:not(.fige) .rev.vu{opacity:1;transform:none}
 .carte-mini.etabli p{max-width:60ch}
 @media (max-width:680px){.carte-mini.etabli{flex-direction:column;align-items:flex-start}}
 .carte-mini.etabli .icone{opacity:.5}
-@media (min-width:720px){.carte-mini.double{grid-column:span 2;flex-direction:row;align-items:center;gap:26px}}
+@media (min-width:720px){.grille-apps{grid-template-columns:1fr 1fr}.carte-mini.double{flex-direction:row;align-items:center;gap:26px}}
 .carte-mini.etabli h4{color:var(--pale)}
 
 /* marque — dessin technique qui se trace */
@@ -250,6 +250,13 @@ footer .legal b{color:var(--pale);font-weight:600}
   </g>
   <rect x="15" y="3.5" width="18" height="27" rx="3.2" fill="#0A1322" stroke="currentColor" stroke-width="2.4"/>
   <path d="M24 10 Q26.2 14.2 29.2 17 Q26.2 19.8 24 24 Q21.8 19.8 18.8 17 Q21.8 14.2 24 10 Z" fill="currentColor"/>
+</symbol>
+<!-- KALEORA — la pièce posée : une grille de casse-tête, la dernière case en laiton arrive à sa place.
+     Même règle : contours à la couleur du texte, la pièce en laiton. -->
+<symbol id="piece-posee" viewBox="0 0 48 48">
+  <rect x="4.5" y="9.5" width="34" height="34" rx="7" fill="none" stroke="currentColor" stroke-width="2.4"/>
+  <path d="M21.5 9.5V43.5M4.5 26.5H38.5" stroke="currentColor" stroke-width="2.4"/>
+  <rect x="25" y="3.5" width="19.5" height="19.5" rx="4.5" fill="#C9A227" stroke="#0A1322" stroke-width="2.4"/>
 </symbol>
 </defs></svg>
 
@@ -382,6 +389,15 @@ footer .legal b{color:var(--pale);font-weight:600}
           <span class="etiquette">En construction</span>
           <h4>JALONYS</h4>
           <p>Le planning de chantier, tenu&nbsp;: indices comparés, pointage d'avancement daté, courbe en S, rétroplanning des approvisionnements. L'application est encore sur l'établi — son site est déjà ouvert&nbsp;: <a href="https://jalonys.app">jalonys.app</a>.</p>
+        </div>
+      </div>
+      <!-- KALEORA — casse-têtes, encore sur l'établi ; sa page d'assistance est déjà ouverte. -->
+      <div class="carte-mini double">
+        <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#piece-posee"/></svg></div>
+        <div>
+          <span class="etiquette">En construction</span>
+          <h4>KALEORA</h4>
+          <p>Le puzzle d'images et vingt autres casse-têtes — sudoku, nonogramme, tangram, sokoban… — avec des indices qui expliquent, de trois à cent trois ans. Gratuit, sans publicité, sans compte. Encore sur l'établi&nbsp;; sa page est déjà ouverte&nbsp;: <a href="/kaleora/">kaleora</a>.</p>
         </div>
       </div>
       <div class="carte-mini etabli">
