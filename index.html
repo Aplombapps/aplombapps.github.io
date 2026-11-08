@@ -154,7 +154,7 @@ html.js:not(.fige) .rev.vu{opacity:1;transform:none}
 @media (max-width:680px){.carte-app{flex-direction:column;text-align:center;padding:36px 26px}}
 .carte-app .icone{width:118px;height:118px;border-radius:26px;background:var(--nuit);border:1px solid rgba(237,240,247,.14);display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(237,240,247,.09)}
 .carte-app .icone svg{width:62%;height:62%}
-.carte-app h3{margin:0 0 8px;font-size:26px;font-weight:800;color:var(--perle);letter-spacing:-.015em}
+.carte-app h4{margin:0 0 8px;font-size:26px;font-weight:800;color:var(--perle);letter-spacing:-.015em}
 .carte-app .etiquette{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--laiton);margin-bottom:10px}
 .carte-app .etiquette::before{content:"";width:22px;height:1px;background:var(--laiton)}
 .carte-app p{margin:0;font-size:15.5px;color:var(--sourdine-clair)}
@@ -163,6 +163,21 @@ html.js:not(.fige) .rev.vu{opacity:1;transform:none}
 .carte-app a,.carte-mini a{color:var(--laiton-2);font-weight:600;border-bottom:1px solid rgba(201,162,39,.4)}
 .carte-app a:hover,.carte-mini a:hover{color:var(--perle);border-bottom-color:var(--perle)}
 /* catalogue — l'atelier s'ouvre à plusieurs applications */
+/* catalogue par catégories : un sommaire en pastilles, puis une rubrique par type d'application */
+.cats{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.cats a{font-size:12.5px;font-weight:600;letter-spacing:.02em;color:var(--sourdine-clair);border:1px solid var(--filet);border-radius:999px;padding:8px 14px;transition:border-color .2s ease,color .2s ease}
+.cats a:hover{color:var(--perle);border-color:rgba(201,162,39,.5)}
+.cats a span{color:var(--laiton);margin-left:6px}
+.categorie{scroll-margin-top:90px}
+.cat-titre{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin:76px 0 0;padding-bottom:14px;border-bottom:1px solid var(--filet);font-size:13px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--perle)}
+.cat-titre span{font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--laiton)}
+.categorie .carte-app{margin-top:24px}
+.categorie .grille-apps{margin-top:20px}
+@media (min-width:720px){.grille-apps>.carte-mini:last-child:nth-child(odd){grid-column:1/-1}.grille-apps>.carte-mini:last-child:nth-child(odd) p{max-width:72ch}}
+.carte-mini .liens{font-size:13.5px;color:var(--sourdine-clair)}
+.carte-app .liens{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px}
+.carte-app .liens .btn-magasin{margin-top:0}
+@media (max-width:680px){.cat-titre{flex-direction:column;align-items:flex-start;gap:6px}.carte-app .liens{justify-content:center}}
 .grille-apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin-top:20px}
 .carte-mini{background:linear-gradient(150deg,var(--panneau) 0%,var(--panneau-2) 130%);border:1px solid var(--filet);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s}
 .carte-mini:hover{border-color:rgba(201,162,39,.3)}
@@ -251,12 +266,58 @@ footer .legal b{color:var(--pale);font-weight:600}
   <rect x="15" y="3.5" width="18" height="27" rx="3.2" fill="#0A1322" stroke="currentColor" stroke-width="2.4"/>
   <path d="M24 10 Q26.2 14.2 29.2 17 Q26.2 19.8 24 24 Q21.8 19.8 18.8 17 Q21.8 14.2 24 10 Z" fill="currentColor"/>
 </symbol>
-<!-- KALEORA — la pièce posée : une grille de casse-tête, la dernière case en laiton arrive à sa place.
-     Même règle : contours à la couleur du texte, la pièce en laiton. -->
-<symbol id="piece-posee" viewBox="0 0 48 48">
-  <rect x="4.5" y="9.5" width="34" height="34" rx="7" fill="none" stroke="currentColor" stroke-width="2.4"/>
-  <path d="M21.5 9.5V43.5M4.5 26.5H38.5" stroke="currentColor" stroke-width="2.4"/>
-  <rect x="25" y="3.5" width="19.5" height="19.5" rx="4.5" fill="#C9A227" stroke="#0A1322" stroke-width="2.4"/>
+<!-- Pictogrammes du catalogue, même règle pour tous : contours à la couleur du texte, l'accent en laiton. -->
+<!-- EMBER TO ORBIT — la trajectoire : la Terre en contour, l'arc qui part vers Mars. -->
+<symbol id="trajectoire" viewBox="0 0 48 48">
+  <circle cx="19" cy="29" r="12" fill="none" stroke="currentColor" stroke-width="2.4"/>
+  <path d="M28.4 20.6C31.5 15.5 35.5 12.2 39.6 10.6" fill="none" stroke="#C9A227" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3.2 3"/>
+  <circle cx="42.5" cy="9.5" r="3.6" fill="#C9A227"/>
+</symbol>
+<!-- FLAME OF AGES — la garde : la flamme au-dessus du rempart crénelé. -->
+<symbol id="flamme-rempart" viewBox="0 0 48 48">
+  <path d="M5 43.5V30.5H11V34.5H17V30.5H22V34.5H26V30.5H31V34.5H37V30.5H43V43.5Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M24 3.5C30.5 11 33.5 16 30.5 22.5C29 25.5 26.5 27 24 27C20 27 17 24 17.5 19.8C18 15.8 21.2 14.5 21 10.5C23.2 12.6 23.8 15 23.6 17.2C26.2 14 25.8 8.6 24 3.5Z" fill="#C9A227"/>
+</symbol>
+<!-- CENTURIES OF FOAM — le comptoir : la voile en laiton au-dessus de la houle. -->
+<symbol id="voile-houle" viewBox="0 0 48 48">
+  <path d="M24 27V5.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M26 7.5L37.5 24H26Z" fill="#C9A227"/>
+  <path d="M9 27.5H39L34 33H14Z" fill="#C9A227"/>
+  <path d="M4 38.5Q9 34.5 14 38.5T24 38.5T34 38.5T44 38.5M4 44.5Q9 40.5 14 44.5T24 44.5T34 44.5T44 44.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+</symbol>
+<!-- LUCIDOR — le bloc diffractant : la grille de verre, la lumière qui sort par le coin. -->
+<symbol id="grille-lumiere" viewBox="0 0 48 48">
+  <rect x="4.5" y="4.5" width="30" height="30" rx="6" fill="none" stroke="currentColor" stroke-width="2.4"/>
+  <path d="M14.5 4.5V34.5M24.5 4.5V34.5M4.5 14.5H34.5M4.5 24.5H34.5" stroke="currentColor" stroke-width="1.4" opacity=".6"/>
+  <path d="M33 33L45 38.5M33 33L43.5 43.5M33 33L38.5 45" stroke="#C9A227" stroke-width="2.4" stroke-linecap="round"/>
+</symbol>
+<!-- FULL REVERSE — le guillemet froissé : deux chevrons qui reculent, le premier a touché. -->
+<symbol id="chevrons-recul" viewBox="0 0 48 48">
+  <path d="M21 8L9.5 21.5L14 24L9.5 26.5L21 40" fill="none" stroke="#C9A227" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38 8L26 24L38 40" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<!-- THE TIME BARRIER — le cône de vapeur : douze segments, un par époque, que l'avion traverse. -->
+<symbol id="cone-vapeur" viewBox="0 0 48 48">
+  <circle cx="24" cy="25" r="16.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-dasharray="6.4 2.24" transform="rotate(-86 24 25)"/>
+  <path d="M24 4L26.6 13.5L39 21V24.5L26.6 21L26 32L30.5 36V39L24 37.2L17.5 39V36L22 32L21.4 21L9 24.5V21L21.4 13.5Z" fill="#C9A227" stroke="#0A1322" stroke-width="1.6" stroke-linejoin="round"/>
+</symbol>
+<!-- THE LONG REFORM — le seuil : un trou de serrure dont le bas devient une route, le soleil levant. -->
+<symbol id="seuil" viewBox="0 0 48 48">
+  <path d="M24 5.5A9 9 0 0 1 29.2 21.9L34 43H14L18.8 21.9A9 9 0 0 1 24 5.5Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+  <circle cx="24" cy="14.5" r="3.6" fill="#C9A227"/>
+  <path d="M24 28V31.5M24 36V39.5" stroke="#C9A227" stroke-width="2.4" stroke-linecap="round"/>
+</symbol>
+<!-- BANNERBUILT — l'oriflamme : la bannière plantée sur le mur de briques. -->
+<symbol id="oriflamme" viewBox="0 0 48 48">
+  <rect x="5" y="30" width="38" height="13.5" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/>
+  <path d="M5 36.7H43M17 30V36.7M31 30V36.7M11 36.7V43.5M24 36.7V43.5M37 36.7V43.5" stroke="currentColor" stroke-width="1.6"/>
+  <path d="M24 30V4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M25.5 5.5H42L37 11L42 16.5H25.5Z" fill="#C9A227"/>
+</symbol>
+<!-- FIRNA — la trace : le sommet en contour, la courbe du skieur en laiton. -->
+<symbol id="trace-sommet" viewBox="0 0 48 48">
+  <path d="M3.5 41.5L18 16.5L25 28L31 19L44.5 41.5Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M18.5 19.5Q25 26 18 31Q12 36 21 43" fill="none" stroke="#C9A227" stroke-width="2.6" stroke-linecap="round"/>
 </symbol>
 </defs></svg>
 
@@ -355,51 +416,161 @@ footer .legal b{color:var(--pale);font-weight:600}
       <p class="grand">Les applications Aplomb sortent une par une, quand elles sont d'aplomb — pas avant. Chacune porte son propre nom et sa propre identité&nbsp;; toutes portent la même exigence.</p>
     </div>
 
-    <!-- DECKORA — premier jeu publié, sur l'App Store depuis le 06/10/2026 (1.9.2 : quinze jeux
-         sur iPhone et iPad, sans blackjack ni hold'em). Pictogramme dans le langage du site :
-         la carte en contour, l'éventail Art déco de son icône en laiton. -->
-    <div class="carte-app rev">
-      <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#carte-levee"/></svg></div>
-      <div>
-        <span class="etiquette">Jeux de cartes · iPhone et iPad</span>
-        <h3>DECKORA</h3>
-        <p>Belote, tarot, solitaire, rami, président… quinze jeux de cartes réunis dans un décor Art déco. Des adversaires à votre mesure, qui ne trichent jamais&nbsp;; les règles de chaque jeu en une pression&nbsp;; des tables entre amis, en ligne ou en se passant l'appareil. Le solitaire et la belote sont offerts, <b>un achat unique débloque tous les autres jeux</b> — sans abonnement ni publicité.</p>
-        <a class="btn btn-magasin" href="https://apps.apple.com/fr/app/deckora/id6817152237" rel="noopener">Disponible sur l'App Store</a>
+    <nav class="cats rev" aria-label="Catégories d'applications">
+      <a href="#cat-cartes">Jeux de cartes<span>1</span></a>
+      <a href="#cat-strategie">Stratégie<span>5</span></a>
+      <a href="#cat-reflexion">Réflexion et casse-têtes<span>1</span></a>
+      <a href="#cat-arcade">Arcade et action<span>2</span></a>
+      <a href="#cat-bureautique">Bureautique du bâtiment<span>2</span></a>
+      <a href="#cat-sport">Sport et plein air<span>1</span></a>
+    </nav>
+
+    <div class="categorie rev" id="cat-cartes">
+      <h3 class="cat-titre">Jeux de cartes<span>1 disponible</span></h3>
+      <!-- DECKORA — publiée, 1.15.0 sur l'App Store (relevé App Store Connect du 08/11/2026). -->
+      <div class="carte-app">
+        <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#carte-levee"/></svg></div>
+        <div>
+          <span class="etiquette">Jeu · iPhone et iPad</span>
+          <h4>DECKORA</h4>
+          <p>Belote, tarot, solitaire, rami, président… quinze jeux de cartes réunis dans un décor Art déco. Des adversaires à votre mesure, qui ne trichent jamais&nbsp;; les règles de chaque jeu en une pression&nbsp;; des tables entre amis, en ligne ou en se passant l'appareil. Le solitaire et la belote sont offerts, <b>un achat unique débloque tous les autres jeux</b> — sans abonnement ni publicité.</p>
+          <div class="liens"><a class="btn btn-magasin" href="https://apps.apple.com/fr/app/deckora/id6817152237" rel="noopener">Disponible sur l'App Store</a></div>
+        </div>
       </div>
     </div>
 
-    <!-- CLAUSIS — premier logiciel publié. Pictogramme redessiné dans le langage du site :
-         contours à la couleur du texte, la clause relevée en laiton. -->
-    <div class="carte-app rev">
-      <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#clause-relevee"/></svg></div>
-      <div>
-        <span class="etiquette">Logiciel professionnel · Windows</span>
-        <h3>CLAUSIS</h3>
-        <p>Lire un dossier de consultation de travaux en une heure, pas en trois jours. CLAUSIS rend ce qui compte&nbsp;: les clauses qui coûtent, les pièces qui manquent, les interfaces entre lots, l'amiante et le plomb — et <b>chaque constat cite sa source</b>. Vos dossiers restent sur votre poste. Au chantier, une application iPhone et iPad gratuite suit l'affaire&nbsp;; sa publication sur l'App Store est en cours. Essai complet de trente jours sur demande, sans carte bancaire&nbsp;; formules sur <a href="https://clausis.app">clausis.app</a>.</p>
+    <div class="categorie rev" id="cat-strategie">
+      <h3 class="cat-titre">Stratégie<span>1 disponible · 2 bientôt · 2 en développement</span></h3>
+      <!-- EMBER TO ORBIT — publiée : iOS 1.0.1 et macOS 1.0.2 (relevé App Store Connect du 08/11/2026). -->
+      <div class="carte-app">
+        <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#trajectoire"/></svg></div>
+        <div>
+          <span class="etiquette">Jeu · iPhone, iPad et Mac</span>
+          <h4>EMBER TO ORBIT</h4>
+          <p>Un jeu de stratégie au tour par tour sur la vraie Terre, de la fin de la dernière glaciation jusqu'à Mars. Un même peuple traverse dix âges en une seule partie, pendant que la mer monte et que le Sahara se dessèche. Seul, à plusieurs sur un appareil, en réseau local ou en ligne. <b>Les trois premiers âges sont offerts</b>, un achat unique ouvre la partie entière, sur iPhone, iPad et Mac.</p>
+          <div class="liens"><a class="btn btn-magasin" href="https://apps.apple.com/fr/app/ember-to-orbit/id6824290770" rel="noopener">Disponible sur l'App Store</a><a href="/embertoorbit/">Assistance</a></div>
+        </div>
+      </div>
+      <div class="grille-apps">
+        <!-- FLAME OF AGES (aeongard) — fiche App Store Connect 1.9.0 prête, non soumise. -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#flamme-rempart"/></svg></div>
+          <div>
+            <span class="etiquette">Bientôt sur l'App Store</span>
+            <h4>FLAME OF AGES</h4>
+            <p>Un tower defense qui traverse les âges, de la grotte aux étoiles&nbsp;: cent épisodes, vingt boss et un épilogue, et chaque jour une traversée nouvelle en huit escales. Gratuit, sans achat, sur&nbsp;iPhone. <a href="/flameofages/">Page du jeu</a>.</p>
+          </div>
+        </div>
+        <!-- CENTURIES OF FOAM (isolarium) — fiche App Store Connect 1.0 prête, non soumise. -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#voile-houle"/></svg></div>
+          <div>
+            <span class="etiquette">Bientôt sur l'App Store</span>
+            <h4>CENTURIES OF FOAM</h4>
+            <p>En 1480, sur un archipel absent des cartes, vous fondez un comptoir, ses chaînes de production et ses routes maritimes. La même ville traverse le temps&nbsp;: 2030 hérite de son plan&nbsp;; en 2500, la mer est montée. Hors ligne, sur&nbsp;iPhone et iPad. <a href="/centuriesoffoam/">Page du jeu</a>.</p>
+          </div>
+        </div>
+        <!-- THE LONG REFORM (geole) — en développement, phase 1. -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#seuil"/></svg></div>
+          <div>
+            <span class="etiquette">En développement</span>
+            <h4>THE LONG REFORM</h4>
+            <p>Un jeu de gestion pénitentiaire en dix époques, de l'Antiquité à une station orbitale. Vous dirigez en réformateur&nbsp;: votre score, c'est la réinsertion.</p>
+          </div>
+        </div>
+        <!-- BANNERBUILT (bastide) — en développement, phase 1. Aucune mention de marque de briques (règles B1-B8). -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#oriflamme"/></svg></div>
+          <div>
+            <span class="etiquette">En développement</span>
+            <h4>BANNERBUILT</h4>
+            <p>Stratégie en temps réel avec pause, dans un monde de briques emboîtables&nbsp;: huit peuples imaginaires bâtissent, assiègent et défendent leurs cités. Les murs tombent brique par brique, là où le bélier frappe.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Le reste du catalogue. Une carte par application ; la dernière reste
-         ouverte tant qu'il y a des choses sur l'établi. -->
+    <div class="categorie rev" id="cat-reflexion">
+      <h3 class="cat-titre">Réflexion et casse-têtes<span>1 bientôt</span></h3>
+      <div class="grille-apps">
+        <!-- LUCIDOR (prisme) — fiche App Store Connect 1.0 prête, non soumise. -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#grille-lumiere"/></svg></div>
+          <div>
+            <span class="etiquette">Bientôt sur l'App Store</span>
+            <h4>LUCIDOR</h4>
+            <p>Un sudoku de verre et de lumière. Son solveur raisonne comme un joueur&nbsp;: il explique la technique suivante au lieu de donner la case. Douze variantes, des modes École, Zen et Éclair. Hors ligne, sans publicité, sur&nbsp;iPhone. <a href="/lucidor/">Page du jeu</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="categorie rev" id="cat-arcade">
+      <h3 class="cat-titre">Arcade et action<span>1 bientôt · 1 en développement</span></h3>
+      <div class="grille-apps">
+        <!-- FULL REVERSE — fiches App Store Connect iOS et macOS 1.0 en préparation. -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#chevrons-recul"/></svg></div>
+          <div>
+            <span class="etiquette">Bientôt sur l'App Store</span>
+            <h4>FULL REVERSE</h4>
+            <p>Une caravane de derby part d'une foire de campagne et monte de ville en ville jusqu'à la grande finale, au volant d'une berline d'occasion. On frappe de l'arrière pour protéger son moteur, selon les vraies règles du derby. Sur&nbsp;iPhone, iPad et Mac.</p>
+          </div>
+        </div>
+        <!-- THE TIME BARRIER (murdutemps) — présentée en développement (décision du 08/11/2026). -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#cone-vapeur"/></svg></div>
+          <div>
+            <span class="etiquette">En développement</span>
+            <h4>THE TIME BARRIER</h4>
+            <p>Un shoot them up vertical à travers l'histoire de l'aviation, de 1909 à la Lune. Une escadrille poursuit le Maëlstrom d'époque en époque&nbsp;: dix avions à améliorer, quarante armes, un boss par chapitre. <a href="/thetimebarrier/">Page du jeu</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="categorie rev" id="cat-bureautique">
+      <h3 class="cat-titre">Bureautique du bâtiment<span>1 disponible · 1 en développement</span></h3>
+      <!-- CLAUSIS — logiciel Windows ; application iPhone et iPad 1.0 publiée le 17/10/2026. -->
+      <div class="carte-app">
+        <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#clause-relevee"/></svg></div>
+        <div>
+          <span class="etiquette">Logiciel professionnel · Windows, iPhone et iPad</span>
+          <h4>CLAUSIS</h4>
+          <p>Lire un dossier de consultation de travaux en une heure, pas en trois jours. CLAUSIS rend ce qui compte&nbsp;: les clauses qui coûtent, les pièces qui manquent, les interfaces entre lots, l'amiante et le plomb — et <b>chaque constat cite sa source</b>. Vos dossiers restent sur votre poste. Au chantier, l'application iPhone et iPad, gratuite, emporte l'affaire, même sans réseau. Essai complet de trente jours sur demande, sans carte bancaire&nbsp;; formules sur <a href="https://clausis.app">clausis.app</a>.</p>
+          <div class="liens"><a class="btn btn-magasin" href="https://apps.apple.com/fr/app/clausis/id6817130381" rel="noopener">L'application iPhone sur l'App Store</a></div>
+        </div>
+      </div>
+      <div class="grille-apps">
+        <!-- JALONYS — fiche App Store Connect du compagnon 1.0.0 en préparation. -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#jalon-plante"/></svg></div>
+          <div>
+            <span class="etiquette">En développement</span>
+            <h4>JALONYS</h4>
+            <p>Le planning de chantier, tenu&nbsp;: indices comparés, pointage d'avancement daté, courbe en S, rétroplanning des approvisionnements. Le logiciel est encore sur l'établi — son site est déjà ouvert&nbsp;: <a href="https://jalonys.app">jalonys.app</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="categorie rev" id="cat-sport">
+      <h3 class="cat-titre">Sport et plein air<span>1 en développement</span></h3>
+      <div class="grille-apps">
+        <!-- FIRNA — fiche App Store Connect 1.0.0 en préparation. -->
+        <div class="carte-mini double">
+          <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#trace-sommet"/></svg></div>
+          <div>
+            <span class="etiquette">En développement</span>
+            <h4>FIRNA</h4>
+            <p>Le compagnon du skieur et du snowboardeur&nbsp;: suivi GPS de la journée, vitesse en direct, plans des pistes, météo et sécurité en montagne, défis entre amis. Sur&nbsp;iPhone et Android. <a href="/firna/">Page de l’application</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="grille-apps rev">
-      <!-- JALONYS — encore sur l'établi ; son site est déjà ouvert. -->
-      <div class="carte-mini double">
-        <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#jalon-plante"/></svg></div>
-        <div>
-          <span class="etiquette">En construction</span>
-          <h4>JALONYS</h4>
-          <p>Le planning de chantier, tenu&nbsp;: indices comparés, pointage d'avancement daté, courbe en S, rétroplanning des approvisionnements. L'application est encore sur l'établi — son site est déjà ouvert&nbsp;: <a href="https://jalonys.app">jalonys.app</a>.</p>
-        </div>
-      </div>
-      <!-- KALEORA — casse-têtes, encore sur l'établi ; sa page d'assistance est déjà ouverte. -->
-      <div class="carte-mini double">
-        <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#piece-posee"/></svg></div>
-        <div>
-          <span class="etiquette">En construction</span>
-          <h4>KALEORA</h4>
-          <p>Le puzzle d'images et vingt autres casse-têtes — sudoku, nonogramme, tangram, sokoban… — avec des indices qui expliquent, de trois à cent trois ans. Gratuit, sans publicité, sans compte, sur&nbsp;iPhone, iPad, Android et Windows. Encore sur l'établi&nbsp;; sa page est déjà ouverte&nbsp;: <a href="/kaleora/">kaleora</a>.</p>
-        </div>
-      </div>
       <div class="carte-mini etabli">
         <div class="icone" aria-hidden="true"><svg style="color:#EDF0F7"><use href="#plomb-seul"/></svg></div>
         <div>
