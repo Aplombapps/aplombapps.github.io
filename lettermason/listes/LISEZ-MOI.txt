@@ -1,0 +1,12 @@
+Letter Mason: modified word lists / listes modifiées / listas modificadas
+
+fr.mots.txt, version 1.0.1: modified from Lexique Grammalecte 7.7 (Dicollecte, grammalecte.net), MPL 2.0.
+es.mots.txt, version 1.0.1: modified from RLA-ES 2.9 (github.com/sbosio/rla-es), used under MPL 2.0.
+
+Changes by Aplomb: proper nouns, acronyms and compounds removed; accents reduced to the game's
+tile alphabet; offensive words and brand names removed; two-letter words restricted to a closed
+list; forms of 2 to 9 letters only; sorted, one form per line, UTF-8.
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+If a copy of the MPL was not distributed with this file, You can obtain one at
+https://mozilla.org/MPL/2.0/. See MPL-2.0.txt. The rest of the game is not under this licence.

@@ -1,4 +1,5 @@
 /* Pages légales d'aplombapps.com : même charte que l'accueil (nuit, perle, laiton, Manrope). */
+@import url("/assets/fonts/manrope.css");
 :root{--nuit:#0A1322;--perle:#EDF0F7;--pale:#C3CEE0;--sourdine:#7E8CA3;--laiton:#C9A227;--laiton-2:#E3C25F;--filet:rgba(237,240,247,.09)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--nuit);color:var(--pale);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}

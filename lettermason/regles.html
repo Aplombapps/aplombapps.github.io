@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Règles du jeu — Letter Mason</title>
+<link rel="canonical" href="https://aplombapps.com/lettermason/regles.html">
+<meta name="theme-color" content="#0A1322">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../legal.css">
+<style>
+.page{overflow-wrap:anywhere}
+table{border-collapse:collapse;width:100%;display:block;overflow-x:auto;font-size:15px;line-height:1.55}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid rgba(242,238,227,.18)}
+blockquote{margin:18px 0;padding:6px 16px;border:1px solid rgba(242,238,227,.35);border-radius:10px}
+.langues a{margin-right:12px}
+</style>
+</head>
+<body>
+<main class="page">
+<a class="retour" href="index.html">← Letter Mason</a>
+<h1>Règles du jeu — Letter Mason</h1>
+<p><em>Version du 21 novembre 2026.</em></p>
+<h2>1. Le principe</h2>
+<p>Chaque jour, tous les joueurs d'une même langue reçoivent <strong>les mêmes 25 lettres</strong>. Avec ces lettres, vous bâtissez sur une grille de <strong>9 × 9</strong> la grille de mots croisés la plus dense possible. On joue en anglais, en français ou en espagnol ; chaque langue a son propre tirage. Les lettres n'ont pas d'accent, sauf le <strong>Ñ</strong> en espagnol.</p>
+<h2>2. Une grille valide</h2>
+<p>Pour être validée, une grille doit respecter trois règles :</p>
+<ul>
+<li>toute suite de <strong>2 lettres ou plus</strong>, horizontale ou verticale, est un mot de la liste de la langue ;</li>
+<li>toutes les tuiles posées forment <strong>un seul bloc</strong>, reliées par leurs côtés ;</li>
+<li>au moins <strong>2 tuiles</strong> sont posées.</li>
+</ul>
+<p>Tant qu'une règle n'est pas respectée, « Valider » reste inactif et le jeu indique le premier problème. Vous n'êtes pas obligé de poser toutes vos lettres.</p>
+<h2>3. Le score</h2>
+<p>Le score d'une grille valide est la somme de :</p>
+<ul>
+<li><strong>Tuiles posées</strong> : 8 points par tuile ;</li>
+<li><strong>Croisements</strong> : 5 points par case appartenant à la fois à un mot horizontal et à un mot vertical ;</li>
+<li><strong>Rareté</strong> : les points de chaque lettre posée, de 4 à 20 ; plus une lettre est difficile à placer dans la langue, plus elle rapporte ;</li>
+<li><strong>Symétrie</strong> de la forme : 15 points pour un axe, 20 pour une rotation d'un demi-tour, 35 pour deux axes. Seule la forme compte, pas les lettres, et il faut au moins 2 lignes et 2 colonnes ;</li>
+<li><strong>Mots longs</strong> : 2 points par lettre au-delà de 4, pour chaque mot, avec un maximum de 20 points par grille ;</li>
+<li><strong>Grille complète</strong> : 20 points si les 25 lettres sont posées ;</li>
+<li><strong>Lettres restées au casier</strong> : moins 3 points par lettre.</li>
+</ul>
+<p>Le score ne descend jamais sous zéro.</p>
+<h2>4. Le rang et la meilleure grille connue</h2>
+<p>Après la validation, le jeu affiche une <strong>estimation</strong> : « au-dessus de X % des grilles de référence du jour ». Votre grille est comparée à <strong>5 000 grilles construites par nos robots</strong> pour ce tirage, <strong>pas aux grilles des autres joueurs</strong>. Ce pourcentage ne dit donc pas votre place parmi les joueurs.</p>
+<p>La <strong>meilleure grille connue</strong> est la meilleure trouvée par notre solveur et nos robots. Elle n'est pas forcément la meilleure possible : <strong>elle peut être battue</strong>, et le jeu vous le dit si vous y parvenez.</p>
+<h2>5. Le défi du jour</h2>
+<ul>
+<li>Le défi change à <strong>minuit, heure locale de votre appareil</strong>.</li>
+<li>Votre <strong>première grille validée</strong> est votre grille officielle. Vous pouvez ensuite rejouer en « reprise », qui ne compte ni pour la série ni pour le classement.</li>
+<li>Le jeu contient 400 tirages par langue, jusqu'au 1er décembre 2027. Au-delà, tant qu'une mise à jour n'en a pas ajouté, les tirages reviennent dans le même ordre.</li>
+</ul>
+<h2>6. La série et le joker</h2>
+<ul>
+<li>Votre série compte les jours où vous avez validé <strong>un défi du jour, dans n'importe quelle langue</strong>.</li>
+<li>Une grille validée <strong>avant 3 h du matin</strong> compte encore pour le jour où ce défi a été ouvert.</li>
+<li><strong>Un joker par mois</strong> couvre automatiquement une journée manquée. Une deuxième journée manquée dans le même mois interrompt la série. Le joker <strong>ne s'achète jamais</strong>.</li>
+<li>Les défis de l'archive ne comptent pas pour la série.</li>
+<li>Si l'horloge de l'appareil a été reculée, une grille validée à ce moment ne compte ni pour la série ni pour le classement.</li>
+</ul>
+<h2>7. Les autres modes</h2>
+<p><strong>Archive.</strong> Les défis passés se rejouent avec leur meilleure grille connue et leur estimation. Les <strong>7 derniers jours</strong> sont gratuits ; les plus anciens font partie de l'Édition complète. Vos scores restent toujours visibles. L'archive ne compte ni pour la série ni pour les classements.</p>
+<p><strong>Sprint.</strong> <strong>15 lettres, grille de 7 × 7, 3 minutes</strong>, avec une pause qui arrête le chronomètre et masque la grille. Le score retenu est celui de votre <strong>dernière grille valide</strong> ; le bonus de grille complète est de 12 points. Un Sprint commencé n'est pas repris si vous fermez le jeu. <strong>3 Sprints par jour</strong> sont gratuits ; l'Édition complète les rend illimités.</p>
+<p><strong>Entraînement.</strong> Des tirages libres, avec une aide qui propose des mots. Rien n'est enregistré ni classé. <strong>Cette aide n'existe jamais dans le défi du jour.</strong></p>
+<h2>8. Classements et succès Game Center</h2>
+<p>Game Center se commande par un <strong>interrupteur dans les Réglages du jeu, éteint par défaut</strong>. Éteint, rien n'est connecté, envoyé ni mis en attente. Allumé, le jeu envoie vos succès déjà acquis, puis vos scores suivants (voir la politique de confidentialité).</p>
+<ul>
+<li><strong>Classement du jour, par langue</strong> : seule votre grille officielle du jour y entre. Sa période va de minuit à minuit sur le marché principal de la langue : elle s'ouvre à <strong>5 h UTC pour l'anglais</strong> et à <strong>23 h UTC pour le français et l'espagnol</strong>. Une grille validée en dehors de la période de son tirage n'y est pas envoyée.</li>
+<li><strong>Sprint de la semaine, par langue</strong> : seuls vos <strong>3 premiers Sprints de chaque jour</strong> comptent, avec ou sans l'Édition complète. La semaine se termine le lundi à minuit sur le marché principal de la langue.</li>
+<li><strong>8 succès</strong> : première grille, séries de 7, 30 et 100 jours, dépasser la meilleure grille connue, jouer dans 2 puis 3 langues, 10 Sprints.</li>
+</ul>
+<p>Les scores ne sont pas vérifiés par un serveur. Les classements n'ont aucune valeur marchande et ne donnent droit à aucun lot.</p>
+<h2>9. Ce que change l'Édition complète</h2>
+<p>L'Édition complète ajoute l'archive complète, le Sprint illimité, les statistiques détaillées et trois thèmes. <strong>Elle n'améliore jamais un score</strong> : même défi, mêmes règles, même barème, même classement. Elle ne donne ni aide dans le défi du jour, ni joker.</p>
+<h2>10. Les mots</h2>
+<p>Les listes de mots viennent de sources libres et sont nettoyées pour un jeu tous publics : les mots grossiers ou injurieux en sont retirés. Il peut en rester, ou manquer un mot que vous connaissez. <strong>« Signaler un mot »</strong> prépare un courriel que vous choisissez d'envoyer.</p>
+<p>Une correction arrive par une mise à jour du jeu. <strong>Elle ne touche jamais un défi déjà commencé ni un score déjà validé.</strong></p>
+
+</main>
+</body>
+</html>
